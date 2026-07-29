@@ -1,0 +1,36 @@
+# Environnements Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Variables d'environnement / secrets
+.env
+*.env
+
+# Données (on ne met jamais de data volumineuse ou sensible dans git)
+data/raw/*
+data/samples/*
+!data/raw/.gitkeep
+!data/samples/.gitkeep
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# dbt (pour les phases suivantes)
+target/
+dbt_packages/
+logs/
+
+# Infra as code (pour les phases suivantes)
+*.tfstate
+*.tfstate.*
+.terraform/
