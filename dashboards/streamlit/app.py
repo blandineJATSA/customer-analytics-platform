@@ -23,9 +23,9 @@ st.set_page_config(
 )
 
 PALETTE = {
-    "à_risque_critique": "#E0555C",
-    "à_surveiller": "#E0A83C",
-    "sain": "#3FA772",
+    "à_risque_critique": "#D98B86",
+    "à_surveiller": "#E3C182",
+    "sain": "#8CC2A3",
 }
 LABELS = {
     "à_risque_critique": "à risque critique",
