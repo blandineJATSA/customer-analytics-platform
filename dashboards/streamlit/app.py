@@ -41,22 +41,22 @@ REACTIVATION_CIBLE = 0.25
 st.markdown(
     """
     <style>
-    .main { background-color: #0E1117; }
+    .main { background-color: #FFFFFF; }
     .block-container { padding-top: 1.5rem; padding-bottom: 3rem; max-width: 1200px; }
     .hero {
         background: linear-gradient(120deg, #1F3864 0%, #0E7C7B 100%);
         padding: 2.2rem 2.5rem; border-radius: 16px; margin-bottom: 1.8rem;
     }
     .hero h1 { color: white; font-size: 2.1rem; margin-bottom: 0.3rem; }
-    .hero p { color: #DCE8F5; font-size: 1.05rem; margin: 0; }
+    .hero p { color: #E4ECF5; font-size: 1.05rem; margin: 0; }
     .kpi-card {
-        background: #171B26; border: 1px solid #2A2F3E;
+        background: #F7F9FB; border: 1px solid #E2E7ED;
         border-radius: 14px; padding: 1.1rem 1.3rem; text-align: left;
     }
-    .kpi-label { color: #9AA4B2; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
-    .kpi-value { color: #F5F7FA; font-size: 1.9rem; font-weight: 700; }
-    .kpi-sub { color: #6FCF97; font-size: 0.82rem; margin-top: 0.2rem; }
-    .segment-card { border-radius: 14px; padding: 1.1rem 1.3rem; border: 1px solid rgba(255,255,255,0.08); }
+    .kpi-label { color: #6B7280; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .kpi-value { color: #1F2933; font-size: 1.9rem; font-weight: 700; }
+    .kpi-sub { color: #0E7C7B; font-size: 0.82rem; margin-top: 0.2rem; }
+    .segment-card { border-radius: 14px; padding: 1.1rem 1.3rem; border: 1px solid rgba(0,0,0,0.06); }
     .segment-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
     .segment-value { font-size: 1.7rem; font-weight: 700; margin-bottom: 0.2rem; }
     .segment-sub { font-size: 0.82rem; opacity: 0.9; }
@@ -164,7 +164,7 @@ with g2:
     fig_bar.update_layout(
         height=340, showlegend=False, coloraxis_showscale=False,
         paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        font_color="#DCE8F5", margin=dict(t=10, b=10, l=10, r=10),
+        font_color="#1F2933", margin=dict(t=10, b=10, l=10, r=10),
         yaxis_tickformat=".0%",
     )
     st.plotly_chart(fig_bar, use_container_width=True)
