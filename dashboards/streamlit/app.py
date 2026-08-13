@@ -44,7 +44,7 @@ st.markdown(
     .main { background-color: #FFFFFF; }
     .block-container { padding-top: 1.5rem; padding-bottom: 3rem; max-width: 1200px; }
     .hero {
-        background: linear-gradient(120deg, #1F3864 0%, #0E7C7B 100%);
+        background: linear-gradient(120deg, #3B5B92 0%, #1CA7A0 100%);
         padding: 2.2rem 2.5rem; border-radius: 16px; margin-bottom: 1.8rem;
     }
     .hero h1 { color: white; font-size: 2.1rem; margin-bottom: 0.3rem; }
@@ -52,7 +52,9 @@ st.markdown(
     .kpi-card {
         background: #F7F9FB; border: 1px solid #E2E7ED;
         border-radius: 14px; padding: 1.1rem 1.3rem; text-align: left;
+        min-height: 128px; display: flex; flex-direction: column; justify-content: space-between;
     }
+    .kpi-label { min-height: 2.2em; }
     .kpi-label { color: #6B7280; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
     .kpi-value { color: #1F2933; font-size: 1.9rem; font-weight: 700; }
     .kpi-sub { color: #0E7C7B; font-size: 0.82rem; margin-top: 0.2rem; }
@@ -98,7 +100,7 @@ kpi_data = [
     (c1, "Clients fidèles", f"{kpis['loyal']:,}".replace(",", " "), "≥3 commandes"),
     (c2, "Taux de churn", f"{kpis['loyal_churn_rate']*100:.1f}%", "chez les fidèles"),
     (c3, "CA en péril", f"{kpis['revenue_at_risk']/1000:.0f} k£", f"{kpis['revenue_at_risk']/kpis['total_revenue_loyal']*100:.1f}% du CA fidèle"),
-    (c4, "Départs détectés à l'avance", f"{RECALL_CIBLE*100:.0f}%", f"≈{ca_preserve_vise/1000:.0f} k£ de CA visés à préserver"),
+    (c4, "Détection anticipée", f"{RECALL_CIBLE*100:.0f}%", f"≈{ca_preserve_vise/1000:.0f} k£ de CA visés à préserver"),
 ]
 for col, label, value, sub in kpi_data:
     col.markdown(
