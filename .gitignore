@@ -49,3 +49,4 @@ data/generated/*
 !data/samples/.gitkeep
 !data/processed/.gitkeep
 !data/generated/.gitkeep
+logs/
