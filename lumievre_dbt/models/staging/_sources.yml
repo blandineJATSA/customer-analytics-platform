@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw
+    database: starlit-gift-504722-c7
+    schema: lumievre_raw
+    tables:
+      - name: online_retail_transactions
+      - name: crm_customers
+      - name: marketing_preferences
+      - name: loyalty_program
+      - name: support_tickets
+      - name: returns
+      - name: payments
+      - name: campaigns
+      - name: campaign_sends

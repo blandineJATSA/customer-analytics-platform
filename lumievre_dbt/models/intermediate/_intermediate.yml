@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: int_customer_rfm
+    columns:
+      - name: rfm_segment
+        tests:
+          - accepted_values:
+              values: ["à_risque_critique", "à_surveiller", "sain"]
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: int_churn_labels
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: churned
+        tests: [not_null]

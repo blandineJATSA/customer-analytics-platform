@@ -1,0 +1,49 @@
+name: dbt tests
+
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'lumievre_dbt/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lumievre_dbt
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dbt
+        run: pip install dbt-core==1.8.0 dbt-bigquery==1.8.0
+
+      - name: Authenticate to GCP
+        run: |
+          echo '${{ secrets.GCP_SA_KEY }}' > /tmp/gcp-key.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp-key.json" >> $GITHUB_ENV
+
+      - name: Set up dbt profile
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml << EOF
+          lumievre_dbt:
+            target: ci
+            outputs:
+              ci:
+                type: bigquery
+                method: service-account
+                keyfile: /tmp/gcp-key.json
+                project: starlit-gift-504722-c7
+                dataset: lumievre_staging
+                threads: 4
+                location: europe-west1
+          EOF
+
+      - name: Run dbt tests
+        run: dbt test

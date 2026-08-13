@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_online_retail__transactions
+    columns:
+      - name: invoice_id
+        tests: [not_null]
+      - name: customer_id
+        tests: []   # peut être null (243k lignes sans Customer ID, connu depuis Phase 1)
+
+  - name: stg_crm__customers
+    columns:
+      - name: customer_id
+        tests: [not_null]   # PAS unique : 160 doublons volontaires (ADR Phase 4)
+
+  - name: stg_loyalty__program
+    columns:
+      - name: customer_id
+        tests: [not_null]
+
+  - name: stg_support__tickets
+    columns:
+      - name: ticket_id
+        tests: [not_null, unique]
+
+  - name: stg_finance__payments
+    columns:
+      - name: payment_id
+        tests: [not_null, unique]
+
+  - name: stg_sales__returns
+    columns:
+      - name: return_id
+        tests: [not_null, unique]
+
+  - name: stg_marketing__campaign_sends
+    columns:
+      - name: send_id
+        tests: [not_null]   # pas unique : 256 doublons volontaires (clients orphelins)
