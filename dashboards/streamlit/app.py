@@ -138,7 +138,7 @@ st.write("")
 g1, g2 = st.columns([1, 1.3])
 
 with g1:
-    st.markdown("**Répartition des segments**")
+    st.markdown("**Répartition des segments clients**")
     fig_pie = go.Figure(
         data=[go.Pie(
             labels=[LABELS[s] for s in seg_stats.index],
@@ -150,7 +150,7 @@ with g1:
         )]
     )
     fig_pie.update_layout(
-        showlegend=False, height=340,
+        showlegend=False, height=320,
         paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(t=10, b=10, l=10, r=10),
     )
@@ -161,10 +161,10 @@ with g2:
     fig_bar = px.bar(
         freq_churn, x="nb_orders_obs", y="churn_rate",
         labels={"nb_orders_obs": "Nombre de commandes", "churn_rate": "Taux de churn"},
-        color="churn_rate", color_continuous_scale=["#3FA772", "#E0A83C", "#E0555C"],
+        color="churn_rate", color_continuous_scale=["#8CC2A3", "#E3C182", "#D98B86"],
     )
     fig_bar.update_layout(
-        height=340, showlegend=False, coloraxis_showscale=False,
+        height=320, showlegend=False, coloraxis_showscale=False,
         paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
         font_color="#1F2933", margin=dict(t=10, b=10, l=10, r=10),
         yaxis_tickformat=".0%",
