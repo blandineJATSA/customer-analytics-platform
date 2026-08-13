@@ -41,3 +41,11 @@ lumievre_dbt/target_local/
 lumievre_dbt/target_docker/
 lumievre_dbt/logs/
 ml/training/mlruns/
+data/raw/*
+data/samples/*
+data/processed/*
+data/generated/*
+!data/raw/.gitkeep
+!data/samples/.gitkeep
+!data/processed/.gitkeep
+!data/generated/.gitkeep
