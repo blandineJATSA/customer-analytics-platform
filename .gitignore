@@ -34,3 +34,10 @@ logs/
 *.tfstate
 *.tfstate.*
 .terraform/
+ci-key.json
+data/generated/*
+!data/generated/.gitkeep
+lumievre_dbt/target_local/
+lumievre_dbt/target_docker/
+lumievre_dbt/logs/
+ml/training/mlruns/

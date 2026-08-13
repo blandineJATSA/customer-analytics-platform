@@ -4,7 +4,7 @@ Plateforme de Customer Analytics end-to-end : détection du risque de churn clie
 construite comme un vrai projet data d'entreprise (cadrage métier, architecture,
 ingestion, data warehouse, analytics engineering, ML, orchestration, monitoring).
 
-> 🚧 Projet en cours de construction, documenté étape par étape.
+>  Projet en cours de construction, documenté étape par étape.
 
 ## Contexte métier
 Lumièvre est une entreprise fictive de vente de cadeaux/déco en ligne. Des clients
